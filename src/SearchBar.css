@@ -1,0 +1,31 @@
+.searchBar {
+  background-color: rgba(219, 208, 210, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  margin: 2rem;
+}
+.dropDown {
+  border: solid;
+  border-width: 0.5px;
+  border-top: none;
+  width: 50%;
+}
+
+.suggestion {
+}
+
+input {
+  width: 50%;
+  font-size: 20px;
+  border-width: 0.5px;
+  border-radius: 3px;
+}
+
+button {
+  font-size: 20px;
+  border-radius: 4px;
+  background-color: rgba(133, 131, 131, 0.899);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  margin-top: 0.3rem;
+}

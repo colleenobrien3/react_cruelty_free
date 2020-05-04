@@ -1,0 +1,38 @@
+.answer {
+  background-color: rgba(219, 208, 210, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  margin: 2rem 6rem;
+  color: rgb(116, 114, 114);
+  padding: 2.4rem 1.4rem;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.terror {
+  background-image: url("./terror.jpg");
+  width: 90%;
+  padding-top: 56.2%;
+  height: auto;
+  background-position: center;
+  background-size: cover;
+  margin: 0.9rem auto;
+  border-radius: 10px;
+  border: solid;
+  border-color: rgb(116, 114, 114);
+  border-width: 1.4px;
+}
+
+.bunny {
+  background-image: url("./bunnies.jpg");
+  width: 90%;
+  padding-top: 72%;
+  height: auto;
+  background-position: center;
+  background-size: cover;
+  margin: 0.9rem auto;
+  border-radius: 10px;
+  border: solid;
+  border-color: rgb(116, 114, 114);
+  border-width: 1.4px;
+}
