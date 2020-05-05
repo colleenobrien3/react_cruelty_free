@@ -43,6 +43,12 @@ class SearchBar extends Component {
     }
   };
 
+  autoFill = (e) => {
+    e.target.parentNode.parentNode.firstChild.value = e.target.innerText;
+    this.props.autocomplete(e);
+    this.props.setOptions(e.target.innerText);
+  };
+
   // if (this.state.checked === false) {
   //   this.props.history.push("/crueltyFull");
   // }
@@ -63,38 +69,41 @@ class SearchBar extends Component {
   //   };
 
   render() {
-    // let list = this.state.value;
-    // let used = [];
-    // let newList = [];
-    // list.forEach((item) => {
-    //   if (!used.includes(item)) {
-    //     let counter = 0;
-    //     list.forEach((piece) => {
-    //       if (item === piece) {
-    //         counter++;
-    //       }
-    //     });
-    //     let candidate = new Candidate(item, counter);
-    //     newList.push(candidate);
-    //     used.push(item);
-    //   }
-    // });
-    // let sortedList = newList.sort((a, b) =>
-    //   b.confidence > a.confidence ? 1 : -1
-    // );
-    // console.log(sortedList);
-    // let listTwo = sortedList.map((item) => {
-    //   return <div className="suggestion">{item.name}</div>;
-    // });
+    console.log(this.props.value);
+    let list = this.props.value;
+    let used = [];
+    let newList = [];
+    list.forEach((item) => {
+      if (!used.includes(item)) {
+        let counter = 0;
+        list.forEach((piece) => {
+          if (item === piece) {
+            counter++;
+          }
+        });
+        let candidate = new Candidate(item, counter);
+        newList.push(candidate);
+        used.push(item);
+      }
+    });
+    let sortedList = newList.sort((a, b) =>
+      b.confidence > a.confidence ? 1 : -1
+    );
+    console.log(sortedList);
+    let listTwo = sortedList.map((item) => {
+      return <div className="suggestion">{item.name}</div>;
+    });
 
     return (
       <div className="searchBar">
         <header className="searchBar-header"></header>
         <main>
           <form onSubmit={this.props.onSubmit.bind(this)}>
-            <input onChange={this.props.typing.bind(this)}></input>
+            <input onChange={this.props.autocomplete.bind(this)}></input>
             {/* <input onChange={this.autoComplete}></input> */}
-            {/* <div className="dropDown">{listTwo}</div> */}
+            <div className="dropDown" onClick={this.autoFill}>
+              {listTwo}
+            </div>
             <button>Search</button>
           </form>
         </main>

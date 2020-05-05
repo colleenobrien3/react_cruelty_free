@@ -27,6 +27,7 @@ class App extends Component {
       options: null,
       typing: null,
       checked: false,
+      candidates: [],
     };
     this.onSubmit.bind(this);
   }
@@ -35,12 +36,36 @@ class App extends Component {
     console.log(e.target.value);
   };
 
+  setOptions = (a) => {
+    this.setState({ options: a });
+  };
+
+  autoComplete = (e) => {
+    let possibilities = [];
+    console.log(e.target.value);
+    console.log(this.state.candidates);
+    if (!e.target.value) {
+      this.setState({ value: [] });
+    } else {
+      this.state.candidates.forEach((item) => {
+        if (item.name.includes(e.target.value)) {
+          console.log("yes");
+          possibilities.push(item.name);
+        }
+      });
+      this.setState({ value: possibilities });
+      this.setState({ options: e.target.value });
+    }
+    console.log(this.state.value);
+  };
+
   onSubmit = (e) => {
     e.preventDefault();
     let bank = [];
     console.log(e.value);
     console.log(this.state.typing);
-    let data = JSON.stringify({ name: this.state.typing });
+    let data = JSON.stringify({ name: this.state.options });
+    console.log(data);
     fetch("https://arcane-brook-10088.herokuapp.com/candidates", {
       method: "POST",
       headers: {
@@ -51,7 +76,7 @@ class App extends Component {
       .then((response) => response.json())
       .catch((err) => console.error("Caught error:", err));
     for (let i = 0; i < this.state.all.length; i++) {
-      if (this.state.all[i].name === this.state.typing) {
+      if (this.state.all[i].name === this.state.options) {
         console.log("yes");
         console.log(this.props.history);
         // this.history.push("/crueltyFree");
@@ -89,6 +114,28 @@ class App extends Component {
       .catch((err) => {
         console.error(err);
       });
+    let names2 = [];
+    let named2 = null;
+    fetch("https://arcane-brook-10088.herokuapp.com/candidates", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        console.log(res);
+        named2 = res;
+        console.log(named2);
+        named2.forEach((item) => {
+          names2.push(item);
+        });
+        console.log(names2);
+        this.setState({ candidates: names2 });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }
   render() {
     console.log(this.history);
@@ -101,8 +148,11 @@ class App extends Component {
         <Header />
         <SearchBar
           {...this.history}
+          setOptions={this.setOptions}
+          value={this.state.value}
           typing={this.typing.bind(this)}
           onSubmit={this.onSubmit.bind(this)}
+          autocomplete={this.autoComplete.bind(this)}
         />
         <Router history={this.history}>
           <Route path="/" exact component={Welcome} />

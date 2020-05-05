@@ -9,6 +9,8 @@
   border-width: 0.5px;
   border-top: none;
   width: 50%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .suggestion {
