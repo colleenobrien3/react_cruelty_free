@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# HiLight
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+I created a React application that allows users to search for cosmetics brands to see whether they are cruelty free or not. When a user visits the page, it makes a GET request to an API I created that holds information about cruelty-free brands. Then, when the user submits the form to search for a brand, the tool routes to a new page that tells the user whether the brand is cruelty-free or not. Additionally, the tool submits a POST request to a different path of the API where previously searched words are stored. This allows the form to provide autocomplete suggestions ranked by how many times someone has searched that brand in the past.
 
-### `npm start`
+## Languages and Technologies
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- JavaScript
+- React.js
+- React Router
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+Please click [here](https://hilight.netlify.app/) to view the deployed site. Please click [here](https://arcane-brook-10088.herokuapp.com) to view the deployed backend and [here](https://github.com/colleenobrien3/makeupupi) to visit the backend repo.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Dependencies
 
-### `npm run build`
+In order to setup the project locally, you will need the following installed on your machine:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ['node.js'](https://nodejs.org/en/download/)
+- ['npm'](https://www.npmjs.com/get-npm)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Setup and Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone this repository.
 
-### `npm run eject`
+In your command line, enter:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+git clone https://github.com/colleenobrien3/react_cruelty_free.git
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Enter cloned repository.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. Run `npm install` to install dependencies from the package.json file.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. Use the command `npm run start` to start the React app in your server.
 
-## Learn More
+## Next Steps
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+I would love to expand upon this app to allow users to submit reviews for specific cruelty-free products.
