@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: "Libre Franklin", sans-serif;
+  font-size: 22px;
 }
 
 .App-header {
@@ -11,4 +12,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.instructions {
+  margin-top: 1rem;
 }

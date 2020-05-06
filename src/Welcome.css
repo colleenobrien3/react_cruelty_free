@@ -1,0 +1,17 @@
+.welcomeImage {
+  background-image: url("./blueLogo.gif");
+  background-size: cover;
+  background-position: center;
+  width: 40%;
+  padding-top: 20%;
+  margin: 0 auto;
+}
+
+.Welcome-title {
+  margin: 1rem 9rem;
+  line-height: 2.5rem;
+}
+
+.Welcome {
+  padding: 1rem 5rem;
+}

@@ -146,6 +146,14 @@ class App extends Component {
           rel="stylesheet"
         ></link>
         <Header />
+        <Router history={this.history}>
+          <Route path="/" exact component={Welcome} />
+          <Route path="/crueltyFree" exact component={Yes} />
+          <Route path="/crueltyFull" exact component={No} />
+        </Router>
+        <div className="instructions">
+          Enter a cosmetics brand to see if it is cruelty-free!
+        </div>
         <SearchBar
           {...this.history}
           setOptions={this.setOptions}
@@ -154,11 +162,6 @@ class App extends Component {
           onSubmit={this.onSubmit.bind(this)}
           autocomplete={this.autoComplete.bind(this)}
         />
-        <Router history={this.history}>
-          <Route path="/" exact component={Welcome} />
-          <Route path="/crueltyFree" exact component={Yes} />
-          <Route path="/crueltyFull" exact component={No} />
-        </Router>
       </div>
     );
   }

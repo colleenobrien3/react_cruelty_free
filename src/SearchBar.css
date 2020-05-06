@@ -1,8 +1,8 @@
 .searchBar {
   background-color: rgba(219, 208, 210, 0.7);
-  padding: 0.5rem 1rem;
+  padding: 2rem 1rem;
   border-radius: 10px;
-  margin: 2rem;
+  margin: 2rem 8rem;
 }
 .dropDown {
   border: solid;
@@ -29,5 +29,5 @@ button {
   background-color: rgba(133, 131, 131, 0.899);
   color: white;
   padding: 0.2rem 0.5rem;
-  margin-top: 0.3rem;
+  margin-top: 0.8rem;
 }
